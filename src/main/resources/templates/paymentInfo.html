@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button2 {background-color: #008CBA;}
+
+</style>
+<head>
+
+    <title>Hello</title>
+</head>
+<body>
+
+
+
+<div align="center">
+    <h1>Confirmation</h1>
+    <p>Debtor account information</p>
+    <form action="#" th:action="@{/oauth/payment-request/consent}" th:object="${Data}" method="post">
+    <table>
+
+            <tr >
+                <td align="right">Identification :</td>
+                <td th:text=" ''+${identification}"> </td>
+            </tr>
+            <tr>
+                <td align="right">Name :</td>
+                <td th:text=" ''+${name}"> </td>
+            </tr>
+            <tr>
+                <td align="right">Scheme Name :</td>
+                <td th:text=" ''+${schemeName}"> </td>
+            </tr>
+            <tr>
+                <td align="right">Secondary Identificatio :</td>
+                <td th:text=" ''+${secondaryIdentification}"></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td align="right">Amount :</td>
+                <td th:text=" ''+${amount}"></td>
+                <td align="right">Currency :</td>
+                <td th:text=" ''+${currency}"> </td>
+            </tr>
+        </table>
+
+        <input name="user_oauth_approval" id="user_oauth_approval" value="true" type="hidden" />
+        <input name="accountId" id="accountId" value="70872490" type="hidden" />
+        <input name="account_request_id" id="account_request_id" th:value="${account_request_id}" type="hidden" />
+
+          <!--  <li>
+                <input id="features1" name="features" type="checkbox" value="SEEDSTARTER_SPECIFIC_SUBSTRATE" />
+                <input name="_features" type="hidden" value="on" />
+                <label for="features1">agree </label>
+            </li>-->
+            <!--<li>
+                <label for="features1"></label>
+            </li>-->
+
+        <p><button class="button button2">Authorised</button></p>
+    </form>
+
+</div>
+</body>
+</html>

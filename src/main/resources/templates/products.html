@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--  <li class="nav-item dropdown" th:if="${#authorization.expression('hasRole(''role'')')}">
+    sudesh
+    </li>-->
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+    <ol>
+        <li th:each="task : ${products}" th:text="${products}"></li>
+    </ol>
+
+</head>
+
+<body>
+
+<a href="/logout">Logout</a>
+
+</main>
+<!-- /.container -->
+
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</body>
+</html>
